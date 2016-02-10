@@ -36,11 +36,10 @@ int main() {
 	}
 
 	else cout << "Unable to open file";
-	int pause;
-	cin >> pause;
+	
 
 	for (int i = 0; i < games.size(); i++) {
-		classify(games[i])
+		classify(games[i]);
 	}
 
 
@@ -50,13 +49,20 @@ int main() {
 
 int classify(string line)
 {
-	for (int i = 0; i < line.size(); i++) {
-
+	vector <char> xvec;
+	vector <char> ovec;
+	for (int i = 1; i < line.size(); i++) {
+		if (line[i] == 'x')
+			xvec.push_back(line[i]);
+		else if (line[i] == 'o')
+			ovec.push_back(line[i]);
 	}
 
-	else if (line[1] == 'X' && line[5] == 'X' && line[9] == 'X')
-		return 1;
-	else if (line[1] == 'O' && line[5] == 'O' && line[9] == 'O')
-		return 1;
+	return xvec.size();
 
+	/*if (line[1] == 'x' && line[5] == 'x' && line[9] == 'x')
+		return 1;
+	else if (line[1] == 'o' && line[5] == 'o' && line[9] == 'o')
+		return 1;*/
+	return 0;
 }
