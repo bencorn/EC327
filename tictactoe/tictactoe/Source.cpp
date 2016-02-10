@@ -50,8 +50,13 @@ int main() {
 
 int classify(string line)
 {
-	//if (line[1] == "X" && line[5] == "X" && line[9] == "X")
+	for (int i = 0; i < line.size(); i++) {
 
+	}
 
-	return 0;
+	else if (line[1] == 'X' && line[5] == 'X' && line[9] == 'X')
+		return 1;
+	else if (line[1] == 'O' && line[5] == 'O' && line[9] == 'O')
+		return 1;
+
 }
