@@ -1,7 +1,7 @@
 //============================================================================
 // Name        : multibase.cpp
 // Author      : Benjamin Corn, Ryan Morano
-// Version     : 0.01
+// Version     : 0.02
 // Copyright   : Boston University
 // Description : Returns all integers x such that Y in base x is palindromic
 //============================================================================
@@ -19,21 +19,20 @@
 
 using namespace std;
 void palindromo(int);
-int reverser(int);
 
 int main() {
 
-	int number, test;
+	// Initializing variables.
+	int number;
 	
 
 	// Test value for palindromo function.
-	number = 100;
+	cout << "Enter the number to test for palindromicity: " << endl;
+	cin >> number;
+
 
 	// Making call to palindromo function.
 	palindromo(number);
-
-
-
 
 	return 0;
 }
@@ -42,12 +41,15 @@ void palindromo(int number) {
 	// Base conversion.
 	int base = 2;
 	int numtemp;
+	// Initializing digits & digits_reversed vectors.
 	vector<int> digits;
 	vector<int> digits_reversed;
 
+	// Converting input int to bases between 2 and n-1.
 	for (int i = 2; i <= number - 1; i++) {
 		int quotient = number;
 		int numtemp = number;
+		// Base conversion while loop.
 		while (quotient != 0) {
 			int remainder = 0;
 
@@ -55,22 +57,29 @@ void palindromo(int number) {
 			quotient = numtemp / i;
 			remainder = numtemp % i;
 
+			// Storing digits of conversion in vector "digits"
 			digits.push_back(remainder);
 			numtemp = quotient;
 		}
 
+		// Copying digits vector to digits_reversed
 		digits_reversed = digits;
-		reverse(digits_reversed.begin(), digits_reversed.end());
-		if (digits_reversed == digits) {
-			for (int j = 0; j < digits_reversed.size(); j++) {
 
+		// Reversing vector
+		reverse(digits_reversed.begin(), digits_reversed.end());
+
+		if (digits_reversed == digits) {
+			// Print base conversions out, one per line.
+			/*for (int j = 0; j < digits_reversed.size(); j++) {
 				cout << digits[j];
 
-			}
-			cout << endl;
+			}*/
+
+			// Output base if palindrome exists.
+			cout <<i << endl;
 		}
 
-
+		// Clearing vector for next base.
 		digits.clear();
 
 	}
@@ -78,11 +87,3 @@ void palindromo(int number) {
 	cin >> pause;
 
 }
-
-//vector <int> reverser(vector<int> digits_reversed) {
-//	// Function to reverse the order of the digits.
-//	for (int i = 0; i < digits_reversed.size(); i++) {
-//
-//	}
-//
-//}
