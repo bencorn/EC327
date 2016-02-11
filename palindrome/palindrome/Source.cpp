@@ -1,7 +1,7 @@
 //============================================================================
 // Name        : multibase.cpp
 // Author      : Benjamin Corn, Ryan Morano
-// Version     : 0.02
+// Version     : 0.03
 // Copyright   : Boston University
 // Description : Returns all integers x such that Y in base x is palindromic
 //============================================================================
@@ -27,7 +27,7 @@ int main() {
 	
 
 	// Test value for palindromo function.
-	cout << "Enter the number to test for palindromicity: " << endl;
+	cout << "Enter the number to test for palindromicity: ";
 	cin >> number;
 
 
@@ -41,6 +41,7 @@ void palindromo(int number) {
 	// Base conversion.
 	int base = 2;
 	int numtemp;
+
 	// Initializing digits & digits_reversed vectors.
 	vector<int> digits;
 	vector<int> digits_reversed;
@@ -83,7 +84,7 @@ void palindromo(int number) {
 		digits.clear();
 
 	}
-	int pause;
-	cin >> pause;
+	/*int pause;
+	cin >> pause;*/
 
 }
