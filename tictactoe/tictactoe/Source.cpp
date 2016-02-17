@@ -203,7 +203,7 @@ int classify(string line)
 // codeparser function and file opener function.
 void codeparser(vector <string> games) {
 	ofstream tttstatus;
-	tttstatus.open("tttstatus_test.txt");
+	tttstatus.open("tttstatus.txt");
 	for (int i = 0; i < games.size(); i++) {
 		int code = classify(games[i]);
 		if (code == 1)
