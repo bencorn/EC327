@@ -17,6 +17,7 @@
 #include <sstream>
 #include <string>
 #include <fstream>
+#include <string.h>
 
 using namespace std;
 
@@ -24,9 +25,12 @@ vector <string> fileopen();
 
 int main() {
 
+	string default_letters = "aadekmmnortww";
+	vector <string> letters;
 
-	cout << "hello" << endl;
-	cout << "hello" << endl;
+	for (int i = 1; i < default_letters.length(); i++)
+
+
 }
 
 vector <string> fileopen() {
