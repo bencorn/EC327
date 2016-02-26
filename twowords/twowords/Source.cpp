@@ -20,9 +20,29 @@
 
 using namespace std;
 
+vector <string> fileopen();
+
 int main() {
 
 
 	cout << "hello" << endl;
 	cout << "hello" << endl;
+}
+
+vector <string> fileopen() {
+	vector <string> words;
+	string line;
+	ifstream myfile("wordlist.txt");
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line))
+		{
+			words.push_back(line);
+		}
+		myfile.close();
+	}
+
+
+	else cout << "Unable to open file";
+	return words;
 }
