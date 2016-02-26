@@ -21,7 +21,7 @@
 
 using namespace std;
 
-vector <string> fileopen();
+vector <string> fileopen(int length);
 
 int main() {
 
@@ -30,10 +30,9 @@ int main() {
 
 	for (int i = 1; i < default_letters.length(); i++)
 
-
 }
 
-vector <string> fileopen() {
+vector <string> fileopen(int length) {
 	vector <string> words;
 	string line;
 	ifstream myfile("wordlist.txt");
@@ -41,7 +40,10 @@ vector <string> fileopen() {
 	{
 		while (getline(myfile, line))
 		{
-			words.push_back(line);
+			string temp_word;
+			temp_word = line;
+			if (temp_word.length() > length)
+				words.push_back(line);
 		}
 		myfile.close();
 	}
