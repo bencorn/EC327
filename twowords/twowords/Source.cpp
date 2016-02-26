@@ -25,8 +25,7 @@ vector <string> fileopen();
 int main() {
 
 
-	cout << "hello" << endl;
-	cout << "hello" << endl;
+    cout<< "Hello"<< endl;
 }
 
 vector <string> fileopen() {
